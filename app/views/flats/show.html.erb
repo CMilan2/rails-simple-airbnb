@@ -1,0 +1,75 @@
+<div class="map" style='background-image: url("https://www.redfin.com/blog/wp-content/uploads/2022/04/Neutral-decor-apartment-.jpg");'></div>
+
+<div class="container" style="margin-top: -75px;">
+  <div class="row">
+    <div class="col-7">
+      <div class="card text-bg-light m-3 px-3">
+        <div class="card-body">
+          <h3 class="card-title"><%= @flat.name %></h3>
+          <p class="card-text"><em><%= @flat.address %></em></p>
+        </div>
+      </div>
+      <div class="card text-bg-light m-3 px-3">
+        <div class="card-body">
+          <h3 class="card-title">A bit more about this place</h3>
+          <p class="card-text"><em><%= @flat.description %></em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="card text-bg-light m-3 px-3">
+        <div class="card-body">
+        <h5 class="card-title">Book this place!</h5>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">20/02/2025</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">From</div>
+              </div>
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="20/02/2025">
+            </div>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">01/03/2025</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">To</div>
+              </div>
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="01/03/2025">
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="form-control btn btn-success mb-2">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card text-bg-light m-3 px-3">
+        <div class="card-body">
+        <h5 class="card-title">Details</h5>
+          <div class="col-auto">
+            <p><%= @flat.number_of_guests %> people <%= @flat.price_per_night %> €</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card text-bg-light m-3 px-3">
+        <div class="card-body">
+          <div class="col-auto">
+            <p>share</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .map {
+    height: 350px;
+    background-position: center;
+    background-size: cover;
+  }
+</style>

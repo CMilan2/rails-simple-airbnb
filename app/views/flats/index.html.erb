@@ -1,0 +1,22 @@
+<h1>All our Flats</h1>
+<p><em>All <%= @flats.count %> flats.</em></p>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @flats.each do |flat| %>
+  <div class="col">
+    <div class="card">
+      <img src="https://www.redfin.com/blog/wp-content/uploads/2022/04/Neutral-decor-apartment-.jpg" class="img-thumbnail" alt="flat">
+      <div class="card-body">
+        <h5 class="card-title"><%= flat.name %></h5>
+        <p class="card-text"><%= flat.address %></p>
+        <p class="card-text"><i class="fa-solid fa-people-roof"></i> <%= flat.number_of_guests %> <i class="ms-3 fa-solid fa-euro-sign"></i> <%= flat.price_per_night %></p>
+      </div>
+      <p>
+        <%= link_to "More info", flat, class:"ms-3 btn btn-outline-primary" %>
+        <%= link_to "Edit", edit_flat_path(flat), class:"btn btn-outline-warning" %>
+        <%= link_to "Remove", flat_path(flat.id), data: {turbo_method: :delete, turbo_confirm: "Do you really want to delete '#{flat.name}' ?"}, class:"btn btn-outline-danger" %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>
